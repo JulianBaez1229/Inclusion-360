@@ -1,0 +1,121 @@
+import pandas as pd
+import os
+from datetime import datetime
+
+LOG_FILE = "log.txt"
+datos = None
+
+
+def escribir_log(mensaje, sobrescribir=False):
+    modo = "w" if sobrescribir else "a"
+    with open(LOG_FILE, modo, encoding="utf-8") as log:
+        fecha = datetime.now().strftime("%d/%m/%Y %H:%M:%S")
+        log.write(f"[{fecha}] {mensaje}\n")
+
+
+def mostrar_log():
+    if not os.path.exists(LOG_FILE):
+        print("No existe el archivo log.")
+        return
+    with open(LOG_FILE, "r", encoding="utf-8") as log:
+        print("\n--- CONTENIDO DEL LOG ---")
+        print(log.read())
+
+
+def cargar_csv():
+    global datos
+    ruta = input("Ingrese la ruta del archivo CSV: ")
+
+    if not os.path.exists(ruta):
+        print("El archivo no existe.")
+        escribir_log("Error: archivo CSV no encontrado")
+        return
+
+    try:
+        datos = pd.read_csv(ruta)
+        if datos.empty:
+            print("El archivo CSV está vacío.")
+            escribir_log("CSV cargado pero está vacío")
+        else:
+            print("Archivo CSV cargado correctamente.")
+            escribir_log("Archivo CSV cargado correctamente")
+    except Exception as e:
+        print("Error al leer el archivo CSV.")
+        escribir_log(f"Error al leer CSV: {e}")
+
+
+def cargar_excel():
+    global datos
+    ruta = input("Ingrese la ruta del archivo Excel (.xlsx): ")
+
+    if not os.path.exists(ruta):
+        print("El archivo no existe.")
+        escribir_log("Error: archivo Excel no encontrado")
+        return
+
+    try:
+        datos = pd.read_excel(ruta)
+        if datos.empty:
+            print("El archivo Excel está vacío.")
+            escribir_log("Excel cargado pero está vacío")
+        else:
+            print("Archivo Excel cargado correctamente.")
+            escribir_log("Archivo Excel cargado correctamente")
+    except Exception as e:
+        print("Error al leer el archivo Excel.")
+        escribir_log(f"Error al leer Excel: {e}")
+
+
+def mostrar_datos():
+    if datos is None:
+        print("No hay datos cargados.")
+        escribir_log("Intento de mostrar datos sin cargar archivo")
+    else:
+        print("\n--- DATOS CARGADOS ---")
+        print(datos)
+        escribir_log("Datos mostrados por pantalla")
+
+
+def limpiar_log():
+    escribir_log("Log sobrescrito por el usuario", sobrescribir=True)
+    print("Log limpiado correctamente.")
+
+
+def menu():
+    print("\n===== SERVICIO DE LECTURA DE DOCUMENTOS =====")
+    print("1. Cargar archivo CSV")
+    print("2. Cargar archivo Excel (.xlsx)")
+    print("3. Mostrar datos")
+    print("4. Mostrar log")
+    print("5. Limpiar log (sobrescribir)")
+    print("6. Salir")
+
+
+def main():
+    escribir_log("Programa iniciado")
+
+    while True:
+        menu()
+        opcion = input("Seleccione una opción: ")
+
+        if opcion == "1":
+            cargar_csv()
+        elif opcion == "2":
+            cargar_excel()
+        elif opcion == "3":
+            mostrar_datos()
+        elif opcion == "4":
+            mostrar_log()
+        elif opcion == "5":
+            limpiar_log()
+        elif opcion == "6":
+            escribir_log("Programa finalizado")
+            print("Saliendo del programa...")
+            break
+        else:
+            print("Opción inválida.")
+            escribir_log("Opción inválida ingresada por el usuario")
+
+
+if __name__ == "__main__":
+    main()
