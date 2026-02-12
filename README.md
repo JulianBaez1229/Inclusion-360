@@ -1,10 +1,16 @@
 # Inclusion-360
-BarrioInteligente es una plataforma digital diseñada para que los vecinos y el gobierno trabajen en equipo para mejorar su entorno. Muchas veces, problemas como un bache, un foco fundido o la basura acumulada pasan desapercibidos; esta herramienta permite que dejen de ser invisibles.
+
+Inclusion-360 es una aplicación inclusiva diseñada para eliminar barreras de comunicación y movilidad mediante inteligencia artificial. Su objetivo es empoderar a las personas con distintas necesidades, permitiéndoles interactuar con su entorno de forma segura, autónoma y eficiente.
+
+Muchas veces, las barreras físicas o comunicativas pasan desapercibidas; esta herramienta las identifica, interpreta y transforma en soluciones accesibles en tiempo real.
 
 ¿Cómo funciona?
 
-Reporta en segundos: A través de una app móvil, cualquier persona puede tomar una foto y marcar en un mapa colaborativo el lugar exacto del problema.
+Interfaz inteligente y predictiva:
+Al abrir la app, el sistema detecta el contexto (ubicación, hora y entorno) y genera accesos rápidos personalizados. La aplicación anticipa necesidades, como reproducir mensajes predefinidos o alertar sobre sonidos importantes del ambiente.
 
-Gestión inteligente: Toda la información se organiza automáticamente mediante tecnología de mapas (GIS) en un panel de control web.
+Comunicación sin barreras:
+A través de visión por computadora, la app traduce lengua de señas a texto o voz en tiempo real, y viceversa. Esto permite conversaciones fluidas sin necesidad de un intérprete humano.
 
-Soluciones reales: Esto permite que las autoridades vean en tiempo real qué zonas necesitan atención urgente, facilitando que los recursos se usen donde más se necesitan.
+Movilidad inclusiva con realidad aumentada:
+El mapa interactivo incorpora filtros de accesibilidad (rampas, baños adaptados, niveles de ruido) y permite validar información mediante escaneo en realidad aumentada, construyendo una base de datos colaborativa y actualizada.
