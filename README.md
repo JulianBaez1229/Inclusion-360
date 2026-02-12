@@ -1,4 +1,4 @@
-# Barrio-inteligente
+# Inclusion-360
 BarrioInteligente es una plataforma digital diseñada para que los vecinos y el gobierno trabajen en equipo para mejorar su entorno. Muchas veces, problemas como un bache, un foco fundido o la basura acumulada pasan desapercibidos; esta herramienta permite que dejen de ser invisibles.
 
 ¿Cómo funciona?
